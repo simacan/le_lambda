@@ -65,7 +65,8 @@ def lambda_handler(event, context):
                         'url': url,
                         'user_agent': line[12]
                     }
-                    msg = "\"{0}\" ip=\"{ip}\" request_time=\"{5}\" elb_status=\"{7}\" backend_status=\"{8}\"" \
+                    msg = "\"{0}\" ip=\"{ip}\" request_processing_time=\"{4}\" backend_processing_time=\"{5}\" response_processing_time=\"{6}\"" \
+                          " elb_status=\"{7}\" backend_status=\"{8}\"" \
                           " bytes_received=\"{9}\" bytes_sent=\"{10}\" method=\"{method}\" url=\"{url}\"" \
                           " user_agent=\"{user_agent}\"\n"\
                         .format(*line, **parsed)
